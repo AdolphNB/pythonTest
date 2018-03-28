@@ -4,6 +4,7 @@ Author: adolphZhang(304633698@qq.com)
 This module write for get stock information, you can enter a number to this Class
 and then could be get message that what want to get.
 '''
+import sys
 import re
 import time
 import threading
@@ -72,9 +73,20 @@ class StockInfo():
         return self.buff[9]
 
 
-
+'''
+The following script to use for the test.
+Python pass argvment need import sys, and the paraments be stored to sys.argv[].
+'''
 if __name__ == '__main__':
-    stc = StockInfo("600122")
+
+    if(len(sys.argv) < 2):
+        print("U must add a stock number to argv[1], like# python StockInfo.py 600550")
+        print("Current parament list is: ")
+        print(sys.argv)
+        exit()
+
+
+    stc = StockInfo(sys.argv[1])
     
     while True:
         print(stc.getName())
