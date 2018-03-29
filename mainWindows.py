@@ -85,11 +85,14 @@ class MainWindow(QWidget):
     
     def closeEvent(self, event):
         print("closeEvent.......")
+        print("exit windows.")
     
     def mousePressEvent(self, event):
-        print("hello")
+        print("mouse press event....")
 
-
+'''
+Main function, PyQt5 come ture.
+'''
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = MainWindow()
